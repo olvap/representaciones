@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     resources :passengers
   end
   resources :operators
+
+  root to: 'reservas#index'
 end

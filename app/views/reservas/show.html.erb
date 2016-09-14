@@ -21,11 +21,6 @@
   <%= @reserva.operator %>
 </p>
 
-<p>
-  <b>Deuda Restante: </b>
-  <span class="peso"><%= @reserva.monto - @reserva.movements.pluck(:monto).reduce(:+) %></span>
-</p>
-
 <h2>Pasajeros</h2>
 <%= render partial: 'passengers/passengers', locals: { reserva: @reserva } %>
 <%= render partial: 'passengers/inlineform',
