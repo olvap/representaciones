@@ -1,0 +1,31 @@
+<table class="table">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Documento</th>
+      <th>Nacimiento</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% reserva.passengers.each do |passenger| %>
+      <tr>
+        <td><%= passenger.name %></td>
+        <td><%= passenger.documento %></td>
+        <td><%= passenger.nacimiento %></td>
+        <td>
+          <%= link_to 'Show', reserva_passenger_path(reserva, passenger) %>
+        </td>
+        <td>
+          <%= link_to 'Edit',
+                      edit_reserva_passenger_path(reserva, passenger) %>
+        </td>
+        <td>
+        <%= link_to 'Destroy', reserva_passenger_path(reserva, passenger),
+                     method: :delete, data: { confirm: 'Are you sure?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

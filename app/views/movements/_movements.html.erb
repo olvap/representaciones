@@ -1,10 +1,7 @@
-<p><b>Reserva: </b><%= @reserva %></p>
-
 <table class="table">
   <thead>
     <tr>
       <th>Monto</th>
-      <th>Type</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -12,17 +9,14 @@
   <tbody>
     <% @movements.each do |movement| %>
       <tr>
-        <td><%= movement.monto %></td>
-        <td><%= movement.type %></td>
-        <td><%= link_to 'Show', movement_path(movement) %></td>
-        <td><%= link_to 'Edit', edit_movement_path(movement) %></td>
-        <td><%= link_to 'Destroy', movement_path(movement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td class="peso"><%= movement.monto %></td>
+        <td><%= link_to 'Detalles', movement_path(movement) %></td>
+        <td><%= link_to 'Editar', edit_movement_path(movement) %></td>
+        <td><%= link_to 'Borrar', movement_path(movement), method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
     <tr>
-      <td>Total: <b>$1122.50</b></td>
+      <td>Total: <b class="peso"><%= @movements.pluck(:monto).reduce(:+)%></b></td>
     </tr>
   </tbody>
 </table>
-
-<br>

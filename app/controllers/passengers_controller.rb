@@ -29,7 +29,7 @@ class PassengersController < ApplicationController
 
     respond_to do |format|
       if @reserva.save && @passenger.save
-        format.html { redirect_to reserva_passenger_path(@reserva, @passenger),
+        format.html { redirect_to reserva_path(@reserva),
                       notice: 'Passenger was successfully created.' }
         format.json { render :show, status: :created, location: @passenger }
       else

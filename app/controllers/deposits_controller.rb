@@ -12,7 +12,7 @@ class DepositsController < ApplicationController
 
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to movement_path(@movement), notice: 'Movement was successfully created.' }
+        format.html { redirect_to @movement.reserva, notice: 'Movement was successfully created.' }
         format.json { render :show, status: :created, location: @movement }
       else
         format.html { render :new }

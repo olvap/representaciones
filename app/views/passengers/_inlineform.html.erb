@@ -1,0 +1,11 @@
+<%= simple_form_for [reserva, passenger], html: { class: 'form-inline' } do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-group">
+    <%= f.input :name %>
+    <%= f.input :documento %>
+    <%= f.input :nacimiento %>
+
+    <%= f.button :submit, 'Agregar Pasajero', class: 'btn btn-primary' %>
+  </div>
+<% end %>

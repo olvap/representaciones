@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<h2>Detalles</h2>
 <p>
   <strong>Salida:</strong>
   <%= @reserva.salida %>
@@ -21,23 +22,28 @@
 </p>
 
 <p>
-  <b>Pagos:</b> $1225.32
-   <%= link_to 'Nuevo Pago', reserva_payments_path(@reserva), class: 'btn btn-default btn-xs' %>
+  <b>Deuda Restante: </b>
+  <span class="peso"><%= @reserva.monto - @reserva.movements.pluck(:monto).reduce(:+) %></span>
 </p>
 
-<p>
-  <b>Depositos:</b> $223.30
-  <%= link_to 'Nuevo Deposito', reserva_deposits_path(@reserva), class: 'btn btn-default btn-xs' %>
-</p>
+<h2>Pasajeros</h2>
+<%= render partial: 'passengers/passengers', locals: { reserva: @reserva } %>
+<%= render partial: 'passengers/inlineform',
+  locals: { passenger: @reserva.passengers.new,
+            reserva: @reserva }%>
 
-<p>
-  <b>Deuda Restante: </b> $1002.05
-</p>
+<h2>Pagos</h2>
+<%= render partial: 'movements/movements', locals: { '@movements': @reserva.payments } %>
+<%= render partial: 'movements/inlineform',
+  locals: { '@movement': @reserva.payments.new,
+            '@reserva': @reserva }%>
 
-<p>
-  <b>passajeros</b>
-  <%= link_to 'Passajeros', reserva_passengers_path(@reserva), class: 'btn btn-default btn-xs' %>
-</p>
+<h2>Depositos</h2>
+<%= render partial: 'movements/movements', locals: { '@movements': @reserva.deposits } %>
+<%= render partial: 'movements/inlineform',
+  locals: { '@movement': @reserva.deposits.new,
+            '@reserva': @reserva }%>
+
 <%= link_to 'Edit', edit_reserva_path(@reserva), class: 'btn btn-default' %>
 <%= link_to 'Back', reservas_path, class: 'btn btn-default' %>
 

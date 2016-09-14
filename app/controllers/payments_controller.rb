@@ -8,11 +8,11 @@ class PaymentsController < ApplicationController
   end
 
   def create
-    @movement = reserva.payments.new(movement_params)
+    @movement = reserva.payments.new(payment_params)
 
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
+        format.html { redirect_to @movement.reserva, notice: 'Movement was successfully created.' }
         format.json { render :show, status: :created, location: @movement }
       else
         format.html { render :new }
@@ -27,7 +27,7 @@ class PaymentsController < ApplicationController
     @reserva ||= Reserva.find(params[:reserva_id])
   end
 
-  def movement_params
-    params.require(:movement).permit(:monto)
+  def payment_params
+    params.require(:payment).permit(:monto)
   end
 end

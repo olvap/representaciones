@@ -6,6 +6,7 @@ class Reserva < ActiveRecord::Base
 
   has_many :payments
   has_many :deposits
+  has_many :movements
 
   def to_s
     "#{operator} - #{salida}"
