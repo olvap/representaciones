@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @movement.monto %>
+</p>
+
+<p>
+  <strong>Reserva:</strong>
+  <%= @movement.reserva %>
+</p>
+
+<p>
+  <strong>Type:</strong>
+  <%= @movement.type %>
+</p>
+
+<%= link_to 'Edit', edit_movement_path(@movement) %> |
+<%= link_to 'Back', movements_path %>

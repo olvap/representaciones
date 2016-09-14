@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Salida:</strong>
+  <%= @reserva.salida %>
+</p>
+
+<p>
+  <strong>Hotel:</strong>
+  <%= @reserva.hotel %>
+</p>
+
+<p>
+  <strong>Monto:</strong>
+  <%= @reserva.monto %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @reserva.operator %>
+</p>
+
+<p>
+  <b>Pagos:</b> $1225.32
+   <%= link_to 'Nuevo Pago', reserva_payments_path(@reserva), class: 'btn btn-default btn-xs' %>
+</p>
+
+<p>
+  <b>Depositos:</b> $223.30
+  <%= link_to 'Nuevo Deposito', reserva_deposits_path(@reserva), class: 'btn btn-default btn-xs' %>
+</p>
+
+<p>
+  <b>Deuda Restante: </b> $1002.05
+</p>
+
+<p>
+  <b>passajeros</b>
+  <%= link_to 'Passajeros', reserva_passengers_path(@reserva), class: 'btn btn-default btn-xs' %>
+</p>
+<%= link_to 'Edit', edit_reserva_path(@reserva), class: 'btn btn-default' %>
+<%= link_to 'Back', reservas_path, class: 'btn btn-default' %>
+

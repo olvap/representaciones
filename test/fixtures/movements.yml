@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  monto: 1
+  reserva_id: 
+  type: 
+
+two:
+  monto: 1
+  reserva_id: 
+  type: 

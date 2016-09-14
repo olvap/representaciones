@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Reservas</h1>
+
+<div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input type="text" class="form-control" placeholder="Buscar...">
+      <span class="input-group-btn">
+        <button class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+  <div class="col-lg-6">
+    <%= link_to 'Nueva Reserva', new_reserva_path, class: 'btn btn-primary' %>
+  </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
+
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Salida</th>
+      <th>Hotel</th>
+      <th>Operator</th>
+      <th>Monto</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @reservas.each do |reserva| %>
+      <tr>
+        <td><%= reserva.salida %></td>
+        <td><%= reserva.hotel %></td>
+        <td><%= reserva.operator %></td>
+        <td class="peso"><%= reserva.monto %></td>
+        <td><%= link_to 'Detalles', reserva, class: 'btn btn-default' %></td>
+        <td><%= link_to 'Editar', edit_reserva_path(reserva), class: 'btn btn-default' %></td>
+        <td><%= link_to 'Borrar', reserva, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger '%></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

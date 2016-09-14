@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  salida: MyString
+  hotel: MyString
+  monto: 1
+  operator_id: 
+
+two:
+  salida: MyString
+  hotel: MyString
+  monto: 1
+  operator_id: 

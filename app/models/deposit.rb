@@ -1,0 +1,2 @@
+class Deposit < Movement
+end
