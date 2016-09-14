@@ -2,7 +2,7 @@
 
 <h1>Listing Operators</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Name</th>
@@ -14,9 +14,9 @@
     <% @operators.each do |operator| %>
       <tr>
         <td><%= operator.name %></td>
-        <td><%= link_to 'Show', operator %></td>
-        <td><%= link_to 'Edit', edit_operator_path(operator) %></td>
-        <td><%= link_to 'Destroy', operator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalles', operator %></td>
+        <td><%= link_to 'Editar', edit_operator_path(operator) %></td>
+        <td><%= link_to 'Borrar', operator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -24,4 +24,4 @@
 
 <br>
 
-<%= link_to 'New Operator', new_operator_path %>
+<%= link_to 'Nuevo Operador', new_operator_path %>
