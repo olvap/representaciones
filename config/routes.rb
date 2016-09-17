@@ -12,5 +12,7 @@ Rails.application.routes.draw do
     resources :movements
   end
 
+  resources :movements
+
   root to: 'reservas#index'
 end

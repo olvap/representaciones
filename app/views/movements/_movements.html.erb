@@ -10,6 +10,7 @@
     <% @movements.each do |movement| %>
       <tr>
         <td class="peso"><%= movement.monto %></td>
+        <td><%= link_to 'Detalles', movement %></td>
       </tr>
     <% end %>
     <tr>
