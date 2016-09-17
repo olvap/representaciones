@@ -1,7 +1,7 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+agencia:
+  name: 'Marcelo Guimenez'
+  type: Retail
 
-one:
-  name: MyString
-
-two:
-  name: MyString
+operadora:
+  name: 'Bucanero'
+  type: Wholesaler

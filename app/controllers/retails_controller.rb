@@ -23,7 +23,7 @@ class RetailsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @operator.update(wholesaler_params)
+      if @operator.update(retails_params)
         format.html { redirect_to @operator, notice: 'Minorista salvado.' }
       else
         format.html { render :edit }
