@@ -1,0 +1,2 @@
+class Retail < Operator
+end

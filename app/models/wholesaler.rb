@@ -1,0 +1,2 @@
+class Wholesaler < Operator
+end

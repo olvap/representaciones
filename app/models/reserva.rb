@@ -1,15 +1,15 @@
 class Reserva < ActiveRecord::Base
-  belongs_to :operator
+  belongs_to :wholesaler
+  belongs_to :retail
 
   has_many :trips
   has_many :passengers, through: :trips
 
   has_many :payments
   has_many :deposits
-  has_many :movements
 
   def to_s
-    "#{operator} - #{salida}"
+    "#{wholesaler} - #{salida}"
   end
 
   after_initialize do
