@@ -1,12 +1,16 @@
 Rails.application.routes.draw do
-  resources :movements
   resources :reservas do
     resources :payments
     resources :deposits
     resources :passengers
   end
-  resources :wholesalers
-  resources :retails
+  resources :wholesalers do
+    resources :movements
+  end
+
+  resources :retails do
+    resources :movements
+  end
 
   root to: 'reservas#index'
 end
