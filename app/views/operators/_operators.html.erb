@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Listing Operators</h1>
-
 <table class="table">
   <thead>
     <tr>
@@ -15,13 +11,8 @@
       <tr>
         <td><%= operator.name %></td>
         <td><%= link_to 'Detalles', operator %></td>
-        <td><%= link_to 'Editar', edit_operator_path(operator) %></td>
-        <td><%= link_to 'Borrar', operator, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'Nuevo Operador', new_operator_path %>

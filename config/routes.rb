@@ -5,7 +5,8 @@ Rails.application.routes.draw do
     resources :deposits
     resources :passengers
   end
-  resources :operators
+  resources :wholesalers
+  resources :retails
 
   root to: 'reservas#index'
 end
