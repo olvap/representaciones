@@ -24,11 +24,11 @@ class MovementsController < ApplicationController
   # POST /movements
   # POST /movements.json
   def create
-    @movement = Movement.new(movement_params)
+    @movement = operator.movements.new(movement_params)
 
     respond_to do |format|
       if @movement.save
-        format.html { redirect_to @movement, notice: 'Movement was successfully created.' }
+        format.html { redirect_to :back, notice: 'Movement was successfully created.' }
         format.json { render :show, status: :created, location: @movement }
       else
         format.html { render :new }
@@ -62,13 +62,17 @@ class MovementsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_movement
-      @movement = Movement.find(params[:id])
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def movement_params
-      params.require(:movement).permit(:monto, :reserva_id, :type)
-    end
+  def set_movement
+    @movement = Movement.find(params[:id])
+  end
+
+  def movement_params
+    params.require(:movement).permit(:monto)
+  end
+
+  def operator
+    @operator = Operator.find params[:operator_id]
+  end
+
 end

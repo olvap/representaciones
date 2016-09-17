@@ -4,11 +4,11 @@ Rails.application.routes.draw do
     resources :deposits
     resources :passengers
   end
-  resources :wholesalers do
-    resources :movements
-  end
 
-  resources :retails do
+  resources :wholesalers
+  resources :retails
+
+  resources :operators do
     resources :movements
   end
 

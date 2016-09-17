@@ -1,9 +1,10 @@
-<%= simple_form_for([@operator, @movement], html: { class: 'form-inline' }) do |f| %>
+<%= simple_form_for([@operator, @movement],
+                    url: operator_movements_path(@operator),
+                    html: { class: 'form-inline' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-groups">
     <%= f.input :monto %>
-    <%= f.input :type, as: :hidden %>
 
     <%= f.button :submit, 'Agregar' %>
   </div>
