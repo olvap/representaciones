@@ -17,12 +17,12 @@
 </p>
 
 <p>
-  <strong>Mayorista:</strong>
+  <strong>Operadora:</strong>
   <%= @reserva.wholesaler %>
 </p>
 
 <p>
-  <strong>Minorista:</strong>
+  <strong>Agencia:</strong>
   <%= @reserva.retail %>
 </p>
 
@@ -33,18 +33,40 @@
             reserva: @reserva }%>
 
 <h2>Pagos</h2>
-<%= render partial: 'movements/movements',
-  locals: { '@movements': @reserva.payments } %>
-<%= render partial: 'movements/inlineform',
-  locals: { '@movement': @reserva.payments.new,
-            '@operator': @reserva.wholesaler }%>
+<% if @reserva.wholesaler %>
+  <%= render partial: 'movements/movements',
+    locals: { '@movements': @reserva.payments } %>
+  <%= render partial: 'movements/inlineform',
+    locals: { '@movement': @reserva.payments.new,
+              '@operator': @reserva.wholesaler }%>
+
+<% else %>
+  <div class="alert alert-info">
+    <p>No hay operadora para esta reserva</p>
+    <p>
+      <%= link_to 'Editar', edit_reserva_path(@reserva),
+        class: 'btn btn-default btn-xs' %>
+   </p>
+  </div>
+<% end %>
 
 <h2>Depositos</h2>
-<%= render partial: 'movements/movements',
-  locals: { '@movements': @reserva.deposits } %>
-<%= render partial: 'movements/inlineform',
-  locals: { '@movement': @reserva.deposits.new,
-            '@operator': @reserva.retail }%>
+<% if @reserva.retail %>
+  <%= render partial: 'movements/movements',
+    locals: { '@movements': @reserva.deposits } %>
+  <%= render partial: 'movements/inlineform',
+    locals: { '@movement': @reserva.deposits.new,
+              '@operator': @reserva.retail }%>
+
+<% else %>
+  <div class="alert alert-info">
+    <p>No hay Agencia para esta reserva</p>
+    <p>
+      <%= link_to 'Editar', edit_reserva_path(@reserva),
+        class: 'btn btn-default btn-xs' %>
+   </p>
+  </div>
+<% end %>
 
 <%= link_to 'Edit', edit_reserva_path(@reserva), class: 'btn btn-default' %>
 <%= link_to 'Back', reservas_path, class: 'btn btn-default' %>
