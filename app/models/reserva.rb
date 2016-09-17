@@ -5,8 +5,8 @@ class Reserva < ActiveRecord::Base
   has_many :trips
   has_many :passengers, through: :trips
 
-  has_many :payments
-  has_many :deposits
+  has_many :payments, through: :wholesaler, source: :movements
+  has_many :deposits, through: :retail, source: :movements
 
   def to_s
     "#{wholesaler} - #{salida}"

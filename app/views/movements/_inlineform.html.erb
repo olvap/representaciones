@@ -1,9 +1,8 @@
-<%= simple_form_for([@reserva, @movement], html: { class: 'form-inline' }) do |f| %>
+<%= simple_form_for([@operator, @movement], html: { class: 'form-inline' }) do |f| %>
   <%= f.error_notification %>
 
   <div class="form-groups">
     <%= f.input :monto %>
-    <%= f.association :reserva, as: :hidden %>
     <%= f.input :type, as: :hidden %>
 
     <%= f.button :submit, 'Agregar' %>

@@ -33,16 +33,18 @@
             reserva: @reserva }%>
 
 <h2>Pagos</h2>
-<%= render partial: 'movements/movements', locals: { '@movements': @reserva.payments } %>
+<%= render partial: 'movements/movements',
+  locals: { '@movements': @reserva.payments } %>
 <%= render partial: 'movements/inlineform',
   locals: { '@movement': @reserva.payments.new,
-            '@reserva': @reserva }%>
+            '@operator': @reserva.wholesaler }%>
 
 <h2>Depositos</h2>
-<%= render partial: 'movements/movements', locals: { '@movements': @reserva.deposits } %>
+<%= render partial: 'movements/movements',
+  locals: { '@movements': @reserva.deposits } %>
 <%= render partial: 'movements/inlineform',
   locals: { '@movement': @reserva.deposits.new,
-            '@reserva': @reserva }%>
+            '@operator': @reserva.retail }%>
 
 <%= link_to 'Edit', edit_reserva_path(@reserva), class: 'btn btn-default' %>
 <%= link_to 'Back', reservas_path, class: 'btn btn-default' %>

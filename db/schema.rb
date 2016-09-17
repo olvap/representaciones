@@ -11,17 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917140922) do
+ActiveRecord::Schema.define(version: 20160917143706) do
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
-    t.integer  "reserva_id"
     t.string   "type"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.integer  "operator_id"
   end
-
-  add_index "movements", ["reserva_id"], name: "index_movements_on_reserva_id"
 
   create_table "operators", force: :cascade do |t|
     t.string   "name"
