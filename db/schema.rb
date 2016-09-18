@@ -18,6 +18,7 @@ ActiveRecord::Schema.define(version: 20160917143706) do
     t.string   "type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "reserva_id"
     t.integer  "operator_id"
   end
 

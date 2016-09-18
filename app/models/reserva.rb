@@ -5,8 +5,15 @@ class Reserva < ActiveRecord::Base
   has_many :trips
   has_many :passengers, through: :trips
 
-  has_many :payments, through: :wholesaler, source: :movements
-  has_many :deposits, through: :retail, source: :movements
+  has_many :movements
+
+  def payments
+    movements.where(operator: wholesaler)
+  end
+
+  def deposits
+    movements.where(operator: retail)
+  end
 
   def to_s
     "#{wholesaler} - #{salida}"

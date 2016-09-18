@@ -68,7 +68,7 @@ class MovementsController < ApplicationController
   end
 
   def movement_params
-    params.require(:movement).permit(:monto)
+    params.require(:movement).permit(:monto, :reserva_id)
   end
 
   def operator

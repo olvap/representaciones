@@ -5,6 +5,9 @@
 
   <div class="form-groups">
     <%= f.input :monto %>
+    <%= f.input :reserva_id,
+      input_html: { value: @reserva.id },
+      as: :hidden %>
 
     <%= f.button :submit, 'Agregar' %>
   </div>
