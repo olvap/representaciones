@@ -15,12 +15,14 @@ ActiveRecord::Schema.define(version: 20160918184842) do
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
+    t.integer  "reserva_id"
     t.string   "type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "reserva_id"
     t.integer  "operator_id"
   end
+
+  add_index "movements", ["reserva_id"], name: "index_movements_on_reserva_id"
 
   create_table "operators", force: :cascade do |t|
     t.string   "name"
