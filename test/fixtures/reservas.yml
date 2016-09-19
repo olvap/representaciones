@@ -1,4 +1,4 @@
 simple_reserva:
   hotel: 'un hotel'
   wholesaler: operadora
-  retail: agencia
+  retailer: agencia

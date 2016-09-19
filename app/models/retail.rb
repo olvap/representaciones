@@ -1,2 +1,0 @@
-class Retail < Operator
-end

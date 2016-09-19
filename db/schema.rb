@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160918184842) do
+ActiveRecord::Schema.define(version: 20160919184847) do
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 20160918184842) do
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "wholesaler_id"
-    t.integer  "retail_id"
+    t.integer  "retailer_id"
     t.integer  "amount_cents",    default: 0,     null: false
     t.string   "amount_currency", default: "USD", null: false
   end

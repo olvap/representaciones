@@ -1,6 +1,6 @@
 require 'test_helper'
 
-class RetailsControllerTest < ActionController::TestCase
+class RetailersControllerTest < ActionController::TestCase
   setup do
     @operator = operators(:agencia)
   end
@@ -17,11 +17,11 @@ class RetailsControllerTest < ActionController::TestCase
   end
 
   test "should create operator" do
-    assert_difference('Retail.count') do
-      post :create, retail: { name: @operator.name }
+    assert_difference('Retailer.count') do
+      post :create, retailer: { name: @operator.name }
     end
 
-    assert_redirected_to retail_path(assigns(:operator))
+    assert_redirected_to retailer_path(assigns(:operator))
   end
 
   test "should show operator" do
@@ -35,15 +35,15 @@ class RetailsControllerTest < ActionController::TestCase
   end
 
   test "should update operator" do
-    patch :update, id: @operator, retail: { name: @operator.name }
-    assert_redirected_to retail_path(assigns(:operator))
+    patch :update, id: @operator, retailer: { name: @operator.name }
+    assert_redirected_to retailer_path(assigns(:operator))
   end
 
   test "should destroy operator" do
-    assert_difference('Retail.count', -1) do
+    assert_difference('Retailer.count', -1) do
       delete :destroy, id: @operator
     end
 
-    assert_redirected_to retails_path
+    assert_redirected_to retailers_path
   end
 end

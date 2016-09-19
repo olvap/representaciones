@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   end
 
   resources :wholesalers
-  resources :retails
+  resources :retailers
 
   resources :operators do
     resources :movements

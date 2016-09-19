@@ -1,16 +1,16 @@
-class RetailsController < ApplicationController
+class RetailersController < ApplicationController
   before_action :set_operator, only: [:show, :edit, :update, :destroy]
 
   def index
-    @operators = Retail.all
+    @operators = Retailer.all
   end
 
   def new
-    @operator = Retail.new
+    @operator = Retailer.new
   end
 
   def create
-    @operator = Retail.new(retails_params)
+    @operator = Retailer.new(retailer_params)
 
     respond_to do |format|
       if @operator.save
@@ -23,7 +23,7 @@ class RetailsController < ApplicationController
 
   def update
     respond_to do |format|
-      if @operator.update(retails_params)
+      if @operator.update(retailer_params)
         format.html { redirect_to @operator, notice: 'Minorista salvado.' }
       else
         format.html { render :edit }
@@ -34,16 +34,16 @@ class RetailsController < ApplicationController
   def destroy
     @operator.destroy
     respond_to do |format|
-      format.html { redirect_to retails_url, notice: 'Minorista borrado.' }
+      format.html { redirect_to retailers_url, notice: 'Minorista borrado.' }
     end
   end
 
   private
     def set_operator
-      @operator = Retail.find(params[:id])
+      @operator = Retailer.find(params[:id])
     end
 
-    def retails_params
-      params.require(:retail).permit(:name)
+    def retailer_params
+      params.require(:retailer).permit(:name)
     end
 end

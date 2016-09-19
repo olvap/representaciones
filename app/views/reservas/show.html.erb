@@ -23,7 +23,7 @@
 
 <p>
   <strong>Agencia:</strong>
-  <%= @reserva.retail %>
+  <%= @reserva.retailer %>
 </p>
 
 <h2>Pasajeros</h2>
@@ -51,12 +51,12 @@
 <% end %>
 
 <h2>Depositos</h2>
-<% if @reserva.retail %>
+<% if @reserva.retailer %>
   <%= render partial: 'movements/movements',
     locals: { '@movements': @reserva.deposits } %>
   <%= render partial: 'movements/inlineform',
     locals: { '@movement': @reserva.deposits.new,
-              '@operator': @reserva.retail }%>
+              '@operator': @reserva.retailer }%>
 
 <% else %>
   <div class="alert alert-info">
