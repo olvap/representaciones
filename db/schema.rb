@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160917143706) do
+ActiveRecord::Schema.define(version: 20160918184842) do
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
@@ -40,12 +40,13 @@ ActiveRecord::Schema.define(version: 20160917143706) do
   create_table "reservas", force: :cascade do |t|
     t.date     "salida"
     t.string   "hotel"
-    t.integer  "monto"
     t.integer  "operator_id"
-    t.datetime "created_at",    null: false
-    t.datetime "updated_at",    null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "wholesaler_id"
     t.integer  "retail_id"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "USD", null: false
   end
 
   add_index "reservas", ["operator_id"], name: "index_reservas_on_operator_id"

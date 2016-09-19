@@ -7,6 +7,8 @@ class Reserva < ActiveRecord::Base
 
   has_many :movements
 
+  monetize :amount_cents
+
   def payments
     movements.where(operator: wholesaler)
   end
@@ -17,9 +19,5 @@ class Reserva < ActiveRecord::Base
 
   def to_s
     "#{wholesaler} - #{salida}"
-  end
-
-  after_initialize do
-    self.monto ||= 0
   end
 end

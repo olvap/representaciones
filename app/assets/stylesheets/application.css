@@ -13,10 +13,3 @@
  *= require_tree .
  *= require_self
  */
-
-.peso::before {
-  content:"$ ";
-}
-.dolar::before {
-  content:"u$s ";
-}
