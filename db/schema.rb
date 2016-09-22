@@ -11,7 +11,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160919184847) do
+ActiveRecord::Schema.define(version: 20160922181023) do
+
+  create_table "invoices", force: :cascade do |t|
+    t.date     "date"
+    t.integer  "operator_id"
+    t.string   "invoice_type"
+    t.integer  "sales_point"
+    t.integer  "number"
+    t.integer  "taxed_21"
+    t.integer  "taxed_105"
+    t.integer  "not_taxed"
+    t.integer  "exempt"
+    t.datetime "created_at",   null: false
+    t.datetime "updated_at",   null: false
+  end
+
+  add_index "invoices", ["operator_id"], name: "index_invoices_on_operator_id"
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
@@ -42,7 +58,6 @@ ActiveRecord::Schema.define(version: 20160919184847) do
   create_table "reservas", force: :cascade do |t|
     t.date     "salida"
     t.string   "hotel"
-    t.integer  "operator_id"
     t.datetime "created_at",                      null: false
     t.datetime "updated_at",                      null: false
     t.integer  "wholesaler_id"
@@ -50,8 +65,6 @@ ActiveRecord::Schema.define(version: 20160919184847) do
     t.integer  "amount_cents",    default: 0,     null: false
     t.string   "amount_currency", default: "USD", null: false
   end
-
-  add_index "reservas", ["operator_id"], name: "index_reservas_on_operator_id"
 
   create_table "trips", force: :cascade do |t|
     t.integer  "reserva_id"

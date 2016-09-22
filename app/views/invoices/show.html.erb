@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @invoice.date %>
+</p>
+
+<p>
+  <strong>Operator:</strong>
+  <%= @invoice.operator %>
+</p>
+
+<p>
+  <strong>Invoice type:</strong>
+  <%= @invoice.invoice_type %>
+</p>
+
+<p>
+  <strong>Sales point:</strong>
+  <%= @invoice.sales_point %>
+</p>
+
+<p>
+  <strong>Number:</strong>
+  <%= @invoice.number %>
+</p>
+
+<p>
+  <strong>Taxed 21:</strong>
+  <%= @invoice.taxed_21 %>
+</p>
+
+<p>
+  <strong>Taxed 105:</strong>
+  <%= @invoice.taxed_105 %>
+</p>
+
+<p>
+  <strong>Not taxed:</strong>
+  <%= @invoice.not_taxed %>
+</p>
+
+<p>
+  <strong>Exempt:</strong>
+  <%= @invoice.exempt %>
+</p>
+
+<%= link_to 'Edit', edit_invoice_path(@invoice) %> |
+<%= link_to 'Back', invoices_path %>
