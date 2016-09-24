@@ -11,6 +11,18 @@ class Invoice < ActiveRecord::Base
   monetize :not_taxed_cents
   monetize :exempt_cents
 
+  def tax_21
+    tax_21_cents / 100.0
+  end
+
+  def tax_105
+    tax_105_cents / 100.0
+  end
+
+  def total
+    total_cents / 100.0
+  end
+
   def tax_21_cents
     (taxed_21_cents * 0.21).to_i
   end

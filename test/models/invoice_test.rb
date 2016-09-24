@@ -7,14 +7,17 @@ class InvoiceTest < ActiveSupport::TestCase
 
   test "tax_21 calculation" do
     assert_equal 210, @invoice.tax_21_cents
+    assert_equal 2.10, @invoice.tax_21
   end
 
   test "tax_105 calculation" do
     assert_equal 105, @invoice.tax_105_cents
+    assert_equal 1.05, @invoice.tax_105
   end
 
   test "total calculation" do
     assert_equal 4315, @invoice.total_cents
+    assert_equal 43.15, @invoice.total
   end
 
   test "valid invoice types" do
