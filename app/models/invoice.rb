@@ -1,5 +1,9 @@
 class Invoice < ActiveRecord::Base
+  INVOICE_TYPES = %w{ A B NC }
+
   belongs_to :operator
+
+  validates :invoice_type, inclusion: INVOICE_TYPES
 
   monetize :taxed_21_cents
   monetize :taxed_105_cents
