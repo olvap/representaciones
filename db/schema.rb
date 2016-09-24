@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160922181023) do
+ActiveRecord::Schema.define(version: 20160924142117) do
 
   create_table "invoices", force: :cascade do |t|
     t.date     "date"
@@ -19,12 +19,12 @@ ActiveRecord::Schema.define(version: 20160922181023) do
     t.string   "invoice_type"
     t.integer  "sales_point"
     t.integer  "number"
-    t.integer  "taxed_21"
-    t.integer  "taxed_105"
-    t.integer  "not_taxed"
-    t.integer  "exempt"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
+    t.integer  "taxed_21_cents"
+    t.integer  "taxed_105_cents"
+    t.integer  "not_taxed_cents"
+    t.integer  "exempt_cents"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   add_index "invoices", ["operator_id"], name: "index_invoices_on_operator_id"
