@@ -1,23 +1,23 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
+venta:
   date: 2016-09-22
-  operator_id: 
-  invoice_type: MyString
+  operator: retailer
+  invoice_type: 'A'
   sales_point: 1
   number: 1
-  taxed_21: 1
-  taxed_105: 1
-  not_taxed: 1
-  exempt: 1
+  taxed_21_cents: 1000
+  taxed_105_cents: 1000
+  not_taxed_cents: 1000
+  exempt_cents: 1000
 
-two:
+compra:
   date: 2016-09-22
-  operator_id: 
-  invoice_type: MyString
+  operator: wholesaler
+  invoice_type: 'A'
   sales_point: 1
   number: 1
-  taxed_21: 1
-  taxed_105: 1
-  not_taxed: 1
-  exempt: 1
+  taxed_21_cents: 1000
+  taxed_105_cents: 1000
+  not_taxed_cents: 1000
+  exempt_cents: 1000
