@@ -1,0 +1,19 @@
+<%= simple_form_for(@invoice) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :date %>
+    <%= f.association :operator %>
+    <%= f.input :invoice_type %>
+    <%= f.input :sales_point %>
+    <%= f.input :number %>
+    <%= f.input :taxed_21 %>
+    <%= f.input :taxed_105 %>
+    <%= f.input :not_taxed %>
+    <%= f.input :exempt %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  date: 2016-09-22
+  operator_id: 
+  invoice_type: MyString
+  sales_point: 1
+  number: 1
+  taxed_21: 1
+  taxed_105: 1
+  not_taxed: 1
+  exempt: 1
+
+two:
+  date: 2016-09-22
+  operator_id: 
+  invoice_type: MyString
+  sales_point: 1
+  number: 1
+  taxed_21: 1
+  taxed_105: 1
+  not_taxed: 1
+  exempt: 1

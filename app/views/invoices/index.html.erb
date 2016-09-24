@@ -1,0 +1,43 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Listing Invoices</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Operator</th>
+      <th>Invoice type</th>
+      <th>Sales point</th>
+      <th>Number</th>
+      <th>Taxed 21</th>
+      <th>Taxed 105</th>
+      <th>Not taxed</th>
+      <th>Exempt</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @invoices.each do |invoice| %>
+      <tr>
+        <td><%= invoice.date %></td>
+        <td><%= invoice.operator %></td>
+        <td><%= invoice.invoice_type %></td>
+        <td><%= invoice.sales_point %></td>
+        <td><%= invoice.number %></td>
+        <td><%= invoice.taxed_21 %></td>
+        <td><%= invoice.taxed_105 %></td>
+        <td><%= invoice.not_taxed %></td>
+        <td><%= invoice.exempt %></td>
+        <td><%= link_to 'Show', invoice %></td>
+        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
+        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Invoice', new_invoice_path %>
