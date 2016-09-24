@@ -1,7 +1,7 @@
-agencia:
+retailer:
   name: 'Marcelo Guimenez'
   type: Retailer
 
-operadora:
+wholesaler:
   name: 'Bucanero'
   type: Wholesaler

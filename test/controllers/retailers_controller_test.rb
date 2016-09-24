@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RetailersControllerTest < ActionController::TestCase
   setup do
-    @operator = operators(:agencia)
+    @operator = operators(:retailer)
   end
 
   test "should get index" do

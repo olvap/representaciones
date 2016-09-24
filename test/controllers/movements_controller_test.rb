@@ -3,7 +3,7 @@ require 'test_helper'
 class MovementsControllerTest < ActionController::TestCase
 
   test "should create movement" do
-    operator = operators(:operadora)
+    operator = operators(:wholesaler)
     @request.env['HTTP_REFERER'] = 'http://test.com/sessions/new'
 
     assert_difference('Movement.count') do
