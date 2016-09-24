@@ -1,4 +1,4 @@
-== README
+# README
 
 Esta app tiene como objetivo armar los mockups de la applicacion de hoteleria y turismo.
 
