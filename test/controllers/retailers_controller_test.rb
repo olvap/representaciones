@@ -18,7 +18,8 @@ class RetailersControllerTest < ActionController::TestCase
 
   test "should create operator" do
     assert_difference('Retailer.count') do
-      post :create, retailer: { name: @operator.name }
+      post :create, retailer:
+        { name: @operator.name, tax_category: @operator.tax_category }
     end
 
     assert_redirected_to retailer_path(assigns(:operator))

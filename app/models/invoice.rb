@@ -1,5 +1,5 @@
 class Invoice < ActiveRecord::Base
-  INVOICE_TYPES = %w{ A B NC }
+  INVOICE_TYPES = %w( A B NC ).freeze
 
   belongs_to :operator, required: true
 

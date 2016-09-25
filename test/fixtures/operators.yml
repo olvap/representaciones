@@ -1,7 +1,9 @@
 retailer:
   name: 'Marcelo Guimenez'
   type: Retailer
+  tax_category: 'MONOTRIBUTO'
 
 wholesaler:
   name: 'Bucanero'
   type: Wholesaler
+  tax_category: 'MONOTRIBUTO'

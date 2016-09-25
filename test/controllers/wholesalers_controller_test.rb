@@ -1,4 +1,4 @@
-require 'test_helper'
+  require 'test_helper'
 
 class WholesalersControllerTest < ActionController::TestCase
   setup do
@@ -18,7 +18,8 @@ class WholesalersControllerTest < ActionController::TestCase
 
   test "should create operator" do
     assert_difference('Wholesaler.count') do
-      post :create, wholesaler: { name: @operator.name }
+      post :create, wholesaler:
+        { name: @operator.name, tax_category: @operator.tax_category }
     end
 
     assert_redirected_to wholesaler_path(assigns(:operator))

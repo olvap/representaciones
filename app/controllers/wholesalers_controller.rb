@@ -44,6 +44,7 @@ class WholesalersController < ApplicationController
     end
 
     def wholesaler_params
-      params.require(:wholesaler).permit(:name)
+      params.require(:wholesaler).permit(
+        :name, :address, :phone, :file_number, :cuit, :tax_category)
     end
 end

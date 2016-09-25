@@ -1,21 +1,31 @@
-<%= form_for(@operator) do |f| %>
-  <% if @operator.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@operator.errors.count, "error") %> prohibited this operator from being saved:</h2>
+<%= simple_form_for(@operator) do |f| %>
+  <%= f.error_notification %>
 
-      <ul>
-      <% @operator.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="field">
-    <%= f.label :nombre %><br>
-    <%= f.text_field :name %>
+  <div class="form-inputs">
+    <%= f.input :name %>
   </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-inputs">
+    <%= f.input :cuit %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :address %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :phone %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :tax_category, collection: ['R.INSCRIPTO','MONOTRIBUTO','EXENTO'] %>
+  </div>
+
+  <div class="form-inputs">
+    <%= f.input :file_number %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
   </div>
 <% end %>

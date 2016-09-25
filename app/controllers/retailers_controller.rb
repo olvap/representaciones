@@ -44,6 +44,7 @@ class RetailersController < ApplicationController
     end
 
     def retailer_params
-      params.require(:retailer).permit(:name)
+      params.require(:retailer).permit(
+        :name, :address, :phone, :file_number, :cuit, :tax_category)
     end
 end
