@@ -5,7 +5,7 @@
     <%= f.input :date, as: :string,
       input_html: { data: {provide: :datepicker}  } %>
     <%= f.association :operator %>
-    <%= f.input :invoice_type %>
+    <%= f.input :invoice_type, collection: Invoice::INVOICE_TYPES %>
     <%= f.input :sales_point %>
     <%= f.input :number %>
     <%= f.input :taxed_21 %>
