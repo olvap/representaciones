@@ -24,7 +24,8 @@ class InvoicesController < ApplicationController
   # POST /invoices
   # POST /invoices.json
   def create
-    @invoice = Invoice.new(invoice_params)
+    @invoice = Invoice.new(invoice_params.merge(
+      'date' => Date.strptime(invoice_params[:date], '%m/%d/%Y')))
 
     respond_to do |format|
       if @invoice.save
