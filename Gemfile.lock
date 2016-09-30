@@ -95,6 +95,7 @@ GEM
     nokogiri (1.6.8)
       mini_portile2 (~> 2.1.0)
       pkg-config (~> 1.1.7)
+    pg (0.18.4)
     pkg-config (1.1.7)
     pry (0.10.3)
       coderay (~> 1.1.0)
@@ -181,6 +182,7 @@ DEPENDENCIES
   jbuilder (~> 2.0)
   jquery-rails
   money-rails
+  pg
   pry
   rails (= 4.2.6)
   sass-rails (~> 5.0)
