@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class WholesalersControllerTest < ActionController::TestCase
+  include RequireAuthentication
+
   setup do
     @operator = operators(:wholesaler)
   end

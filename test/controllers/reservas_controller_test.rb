@@ -1,6 +1,8 @@
 require 'test_helper'
 
 class ReservasControllerTest < ActionController::TestCase
+  include RequireAuthentication
+
   setup do
     @reserva = reservas(:simple_reserva)
   end

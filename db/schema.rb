@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160925211707) do
+ActiveRecord::Schema.define(version: 20160929193816) do
 
   create_table "invoices", force: :cascade do |t|
     t.date     "date"
@@ -80,5 +80,12 @@ ActiveRecord::Schema.define(version: 20160925211707) do
 
   add_index "trips", ["passenger_id"], name: "index_trips_on_passenger_id"
   add_index "trips", ["reserva_id"], name: "index_trips_on_reserva_id"
+
+  create_table "users", force: :cascade do |t|
+    t.string   "email"
+    t.string   "password_digest"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
 
 end

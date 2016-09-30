@@ -3,6 +3,9 @@ Rails.application.routes.draw do
     get 'export', on: :collection
   end
 
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :reservas do
     resources :payments
     resources :deposits

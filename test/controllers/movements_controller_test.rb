@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class MovementsControllerTest < ActionController::TestCase
+  include RequireAuthentication
 
   test "should create movement" do
     operator = operators(:wholesaler)

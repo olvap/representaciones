@@ -12,3 +12,8 @@ Retailer.find_or_create_by name: 'Agencia 3'
 
 Wholesaler.find_or_create_by name: 'Operadora 1'
 Wholesaler.find_or_create_by name: 'Operadora 2'
+
+User.create(
+  email: 'user@mail.com',
+  password: 'secreto'
+)

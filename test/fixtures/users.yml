@@ -1,0 +1,3 @@
+admin:
+  email: $LABEL@test.com
+  password_digest: <%= BCrypt::Password.create('secret')%>

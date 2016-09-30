@@ -8,3 +8,13 @@ class ActiveSupport::TestCase
 
   # Add more helper methods to be used by all tests here...
 end
+
+module RequireAuthentication
+  def login
+    session[:user_id] = users(:admin).id
+  end
+
+  def setup
+    login
+  end
+end
