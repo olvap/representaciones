@@ -11,6 +11,10 @@ class Invoice < ActiveRecord::Base
   monetize :not_taxed_cents
   monetize :exempt_cents
 
+  def operator_namespace
+    operator.class.to_s.pluralize.downcase
+  end
+
   def tax_21
     tax_21_cents / 100.0
   end

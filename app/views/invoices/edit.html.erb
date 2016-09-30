@@ -1,6 +1,6 @@
-<h1>Editing Invoice</h1>
+<h1>Editar</h1>
 
-<%= render 'form' %>
+<%= render partial: 'form', locals: { operators: @operators } %>
 
-<%= link_to 'Show', @invoice %> |
-<%= link_to 'Back', invoices_path %>
+<%= link_to 'Detalles', [@invoice.operator_namespace, @invoice] %> |
+<%= link_to 'Volver', [@invoice.operator_namespace, :invoices] %>

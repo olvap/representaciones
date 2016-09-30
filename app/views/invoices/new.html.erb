@@ -1,5 +1,3 @@
-<h1>New Invoice</h1>
+<h1>Nuevo</h1>
 
-<%= render 'form' %>
-
-<%= link_to 'Back', invoices_path %>
+<%= render partial: 'form', locals: { operators: @operators } %>
