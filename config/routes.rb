@@ -1,5 +1,11 @@
 Rails.application.routes.draw do
-  resources :invoices
+  resources :invoices do
+    collection do
+      get :sales
+      get :purchaces
+    end
+  end
+
   resources :reservas do
     resources :payments
     resources :deposits

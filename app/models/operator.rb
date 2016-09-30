@@ -3,6 +3,7 @@ class Operator < ActiveRecord::Base
     ['R.INSCRIPTO', 'MONOTRIBUTO', 'EXENTO'].freeze
 
   has_many :movements
+  has_many :invoices
 
   validates :tax_category, inclusion: TAX_CATEGORIES
 
