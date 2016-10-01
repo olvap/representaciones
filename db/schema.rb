@@ -31,12 +31,14 @@ ActiveRecord::Schema.define(version: 20160925211707) do
 
   create_table "movements", force: :cascade do |t|
     t.integer  "monto"
+    t.integer  "reserva_id"
     t.string   "type"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
-    t.integer  "reserva_id"
     t.integer  "operator_id"
   end
+
+  add_index "movements", ["reserva_id"], name: "index_movements_on_reserva_id"
 
   create_table "operators", force: :cascade do |t|
     t.string   "name"
@@ -61,12 +63,12 @@ ActiveRecord::Schema.define(version: 20160925211707) do
   create_table "reservas", force: :cascade do |t|
     t.date     "salida"
     t.string   "hotel"
-    t.datetime "created_at",                      null: false
-    t.datetime "updated_at",                      null: false
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
     t.integer  "wholesaler_id"
     t.integer  "retailer_id"
-    t.integer  "amount_cents",    default: 0,     null: false
-    t.string   "amount_currency", default: "USD", null: false
+    t.integer  "amount_cents",    default: 0
+    t.string   "amount_currency"
   end
 
   create_table "trips", force: :cascade do |t|
