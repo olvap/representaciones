@@ -6,6 +6,14 @@ Rails.application.routes.draw do
     resources :passengers
   end
 
+  namespace :wholesalers do
+    resources :invoices
+  end
+
+  namespace :retailers do
+    resources :invoices
+  end
+
   resources :wholesalers
   resources :retailers
 

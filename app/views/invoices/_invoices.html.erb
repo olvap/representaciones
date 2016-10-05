@@ -1,7 +1,3 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Comprobantes</h1>
-
 <table class='table'>
   <thead>
     <tr>
@@ -34,14 +30,12 @@
         <td><%= invoice.not_taxed %></td>
         <td><%= invoice.exempt %></td>
         <td><%= invoice.total %></td>
-        <td><%= link_to 'Show', invoice %></td>
-        <td><%= link_to 'Edit', edit_invoice_path(invoice) %></td>
-        <td><%= link_to 'Destroy', invoice, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Detalles', [invoice.operator_namespace, invoice] %></td>
+        <td><%= link_to 'Editar',
+          [:edit, invoice.operator_namespace, invoice] %></td>
+        <td><%= link_to 'Borrar', [invoice.operator_namespace, invoice],
+          method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Invoice', new_invoice_path, class: 'btn btn-primary' %>

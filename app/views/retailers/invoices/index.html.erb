@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Comprobantes Venta</h1>
+
+<%= render partial: 'invoices', locals: { operators: @operators } %>
+
+<%= link_to 'Nueva Venta', new_retailers_invoice_path,
+  class: 'btn btn-primary' %>
+
