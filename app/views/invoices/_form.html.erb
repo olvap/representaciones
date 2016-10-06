@@ -2,14 +2,15 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :date, as: :string, label: 'Fecha',
-      input_html: { data: {provide: :datepicker}  } %>
+    <%= f.input :date, as: :string, label: 'Fecha', input_html:
+      { value: f.object.date && f.object.date.strftime('%d/%m/%Y'),
+        data: { provide: :datepicker } } %>
     <%= f.association :operator, collection: operators,
       label: 'Operador' %>
     <%= f.input :invoice_type, collection: Invoice::INVOICE_TYPES,
       label: 'Factura Tipo' %>
-    <%= f.input :sales_point %>
-    <%= f.input :number %>
+    <%= f.input :sales_point, label: 'Punto de venta' %>
+    <%= f.input :number, label: 'Numero' %>
     <%= f.input :taxed_21, label: 'IVA 21%' %>
     <%= f.input :taxed_105, label: 'IVA 10,5%' %>
     <%= f.input :not_taxed, label: 'No gravado' %>
