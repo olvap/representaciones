@@ -39,4 +39,8 @@ class Invoice < ActiveRecord::Base
     taxed_21_cents + taxed_105_cents + tax_21_cents + tax_105_cents +
       exempt_cents + not_taxed_cents
   end
+
+  def full_number
+    "#{ invoice_type } %04d-%08d" % [sales_point, number]
+  end
 end

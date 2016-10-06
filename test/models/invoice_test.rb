@@ -33,4 +33,8 @@ class InvoiceTest < ActiveSupport::TestCase
     @invoice.validate
     assert_not @invoice.errors[:invoice_type].empty?
   end
+
+  test "full number" do
+    assert_equal "A 0001-00000001", @invoice.full_number
+  end
 end
