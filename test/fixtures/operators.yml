@@ -2,8 +2,10 @@ retailer:
   name: 'Marcelo Guimenez'
   type: Retailer
   tax_category: 'MONOTRIBUTO'
+  cuit: 216547897
 
 wholesaler:
   name: 'Bucanero'
   type: Wholesaler
   tax_category: 'MONOTRIBUTO'
+  cuit: 216547898
