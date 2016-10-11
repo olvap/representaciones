@@ -146,7 +146,7 @@ GEM
     sdoc (0.4.1)
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
-    siap_exporter (0.0.2)
+    siap_exporter (0.0.3)
       fixed_width_dsl (= 0.1.1)
     simple_form (3.1.0)
       actionpack (~> 4.0)
