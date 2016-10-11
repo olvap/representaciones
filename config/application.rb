@@ -23,5 +23,13 @@ module RepresentacionesMockups
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    console do
+      begin
+        require "pry"
+        config.console = Pry
+      rescue
+        warn 'Pry not available'
+      end
+    end
   end
 end

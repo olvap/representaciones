@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  resources :invoices
+  resources :invoices do
+    get 'export', on: :collection
+  end
+
   resources :reservas do
     resources :payments
     resources :deposits
