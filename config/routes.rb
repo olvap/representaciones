@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   resources :invoices do
     get 'export', on: :collection
-    post 'export', on: :collection
   end
 
   resources :reservas do

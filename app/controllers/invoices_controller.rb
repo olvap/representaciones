@@ -64,8 +64,10 @@ class InvoicesController < ApplicationController
   # GET /invoices/export
   # Export files to be imported in SIAp
   def export
-    export = SiapExportService.new Invoice.joins(:operator).all
-    send_data export.zip, filename: "compras_y_ventas.zip"
+    if params['periods']
+      export = SiapExportService.new Invoice.joins(:operator).all
+      send_data export.zip, filename: "compras_y_ventas.zip"
+    end
   end
 
   private
