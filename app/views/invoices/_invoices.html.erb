@@ -3,7 +3,10 @@
     <tr>
       <th>Fecha</th>
       <th>Operador</th>
-      <th>Factura Nro</th>
+      <th>CUIT</th>
+      <th>Factura</th>
+      <th>Pto_d_Vta</th>
+      <th>Nro</th>
       <th>Gravado 21%</th>
       <th>IVA 21%</th>
       <th>Gravado 10,5%</th>
@@ -18,9 +21,12 @@
   <tbody>
     <% @invoices.each do |invoice| %>
       <tr>
-        <td><%= localize invoice.date, :format => '%d de %B, %Y' %></td>
+        <td><%= localize invoice.date, :format => '%d/%m/%Y' %></td>
         <td><%= invoice.operator.name %></td>
-        <td><%= invoice.full_number %></td>
+        <td><%= invoice.operator.cuit %></td>
+        <td><%= invoice.invoice_type %></td>
+        <td><%= invoice.sales_point %></td>
+        <td><%= invoice.number %></td>
         <td><%= invoice.taxed_21 %></td>
         <td><%= invoice.tax_21 %></td>
         <td><%= invoice.taxed_105 %></td>
@@ -32,7 +38,7 @@
         <td><%= link_to 'Editar',
           [:edit, invoice.operator_namespace, invoice] %></td>
         <td><%= link_to 'Borrar', [invoice.operator_namespace, invoice],
-          method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          method: :delete, data: { confirm: '¿Seguro de borrar?' } %></td>
       </tr>
     <% end %>
   </tbody>

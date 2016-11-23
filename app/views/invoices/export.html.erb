@@ -2,13 +2,13 @@
 
 <form>
   <div class="form-group">
-    <label for="periods">Periodos a exportar</label>
+    <label for="periods">Períodos a exportar</label>
     <select id="periods" name="periods[]" multiple required class="required form-control">
       <%= periods.each do |period| %>
         <option><%= period %></option>
       <% end %>
     </select>
-    <p class="help-block">Seleccione múltiples períodos usando shift</p>
+    <p class="help-block">Seleccione múltiples períodos usando Shift o Ctrl</p>
   </div>
 
   <button class="btn btn-default">export</button>

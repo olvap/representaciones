@@ -15,10 +15,10 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li><%= link_to 'Reservas', reservas_path %></li>
-        <li><%= link_to 'Operadoras', wholesalers_path %></li>
-        <li><%= link_to 'Agencias', retailers_path %></li>
-        <li><%= link_to 'Comprobantes Compra', wholesalers_invoices_path %></li>
-        <li><%= link_to 'Comprobantes Venta', retailers_invoices_path %></li>
+        <li><%= link_to 'Proveedores', wholesalers_path %></li>
+        <li><%= link_to 'Clientes', retailers_path %></li>
+        <li><%= link_to 'Compras', wholesalers_invoices_path %></li>
+        <li><%= link_to 'Ventas', retailers_invoices_path %></li>
         <li><%= link_to 'Exportar', export_invoices_path, data: { turbolinks: false } %></li>
         <% if current_user %>
           <li><%= current_user.email  %></li>
