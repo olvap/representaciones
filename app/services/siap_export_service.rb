@@ -5,10 +5,10 @@ class SiapExportService
         tipo_comprobante: i.invoice_type,
         punto_de_venta: i.sales_point,
         numero_comprobante: i.number,
-        gravado_21: i.tax_21_cents,
-        iva_21: i.tax_21,
-        gravado_10: i.tax_105_cents,
-        iva_10: i.tax_105,
+        gravado_21: i.taxed_21_cents,
+        iva_21: i.tax_21_cents,
+        gravado_10: i.taxed_105_cents,
+        iva_10: i.tax_105_cents,
         no_gravado: i.not_taxed_cents,
         exento: i.exempt_cents }.merge(operator_data(i.operator))
     end
@@ -17,7 +17,7 @@ class SiapExportService
   def zip
     @zip ||= build_zip
   end
-  
+
   private
 
   def operator_data operator
@@ -35,7 +35,7 @@ class SiapExportService
   def archivos
     @archivos ||= SiapExporter::ComprasVentas.generate @comprobantes
   end
-    
+
   def build_zip
     Zip::OutputStream.write_buffer do |out|
       %w[ compras alicuotas_compras ventas alicuotas_ventas ].each do |file|
