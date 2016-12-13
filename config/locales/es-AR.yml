@@ -151,10 +151,10 @@ es-AR:
   number:
     currency:
       format:
-        delimiter: "."
+        delimiter: ","
         format: "%u%n"
         precision: 2
-        separator: "."
+        separator: ","
         significant: false
         strip_insignificant_zeros: false
         unit: "$"
