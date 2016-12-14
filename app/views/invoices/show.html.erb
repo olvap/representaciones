@@ -11,10 +11,13 @@
 </p>
 
 <p>
+  <strong>CUIT:</strong>
+  <%= @invoice.operator.cuit %>
+</p>
+
+<p>
   <strong>Factura:</strong>
-  <%= @invoice.invoice_type %>
-  <%= @invoice.sales_point %>
-  <%= @invoice.number %>
+  <%= @invoice.full_number %>
 </p>
 
 <p>
@@ -23,7 +26,17 @@
 </p>
 
 <p>
+  <strong>IVA 21%</strong>
+  <%= @invoice.tax_21 %>
+</p>
+
+<p>
   <strong>Gravado IVA 10,5:</strong>
+  <%= @invoice.tax_105 %>
+</p>
+
+<p>
+  <strong>IVA 10,5:</strong>
   <%= @invoice.taxed_105 %>
 </p>
 
@@ -37,5 +50,17 @@
   <%= @invoice.exempt %>
 </p>
 
+<p>
+  <strong>Percepcion AFIP:</strong>
+  <%= @invoice.perception %>
+</p>
+
+<p>
+  <strong>Total:</strong>
+  <%= @invoice.total %>
+</p>
+
 <%= link_to 'Editar', [:edit, @invoice.operator_namespace, @invoice] %> |
+<%= link_to 'Borrar', [@invoice.operator_namespace, @invoice], method: :delete,
+  data: { confirm: 'Desea eliminar la factura?' } %> |
 <%= link_to 'Volver', [@invoice.operator_namespace, :invoices] %>
