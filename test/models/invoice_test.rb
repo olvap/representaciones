@@ -16,8 +16,8 @@ class InvoiceTest < ActiveSupport::TestCase
   end
 
   test "total calculation" do
-    assert_equal 4315, @invoice.total_cents
-    assert_equal 43.15, @invoice.total
+    assert_equal 4415, @invoice.total_cents
+    assert_equal 44.15, @invoice.total
   end
 
   test "valid invoice types" do

@@ -10,6 +10,7 @@ venta:
   taxed_105_cents: 1000
   not_taxed_cents: 1000
   exempt_cents: 1000
+  perception_cents: 100
 
 compra:
   date: 2016-09-22
