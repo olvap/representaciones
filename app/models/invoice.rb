@@ -12,6 +12,8 @@ class Invoice < ActiveRecord::Base
   monetize :exempt_cents
   monetize :perception_cents
 
+  default_scope { order(date: 'DESC') }
+
   def operator_namespace
     operator.class.to_s.pluralize.downcase
   end
