@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160929193816) do
+ActiveRecord::Schema.define(version: 20161214155644) do
 
   create_table "invoices", force: :cascade do |t|
     t.date     "date"
@@ -19,12 +19,13 @@ ActiveRecord::Schema.define(version: 20160929193816) do
     t.string   "invoice_type"
     t.integer  "sales_point"
     t.integer  "number"
-    t.integer  "taxed_21_cents",  default: 0
-    t.integer  "taxed_105_cents", default: 0
-    t.integer  "not_taxed_cents", default: 0
-    t.integer  "exempt_cents",    default: 0
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.integer  "taxed_21_cents",   default: 0
+    t.integer  "taxed_105_cents",  default: 0
+    t.integer  "not_taxed_cents",  default: 0
+    t.integer  "exempt_cents",     default: 0
+    t.datetime "created_at",                   null: false
+    t.datetime "updated_at",                   null: false
+    t.integer  "perception_cents", default: 0
   end
 
   add_index "invoices", ["operator_id"], name: "index_invoices_on_operator_id"
@@ -63,12 +64,12 @@ ActiveRecord::Schema.define(version: 20160929193816) do
   create_table "reservas", force: :cascade do |t|
     t.date     "salida"
     t.string   "hotel"
-    t.datetime "created_at",                  null: false
-    t.datetime "updated_at",                  null: false
+    t.datetime "created_at",                      null: false
+    t.datetime "updated_at",                      null: false
     t.integer  "wholesaler_id"
     t.integer  "retailer_id"
-    t.integer  "amount_cents",    default: 0
-    t.string   "amount_currency"
+    t.integer  "amount_cents",    default: 0,     null: false
+    t.string   "amount_currency", default: "USD", null: false
   end
 
   create_table "trips", force: :cascade do |t|

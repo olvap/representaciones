@@ -10,6 +10,7 @@ class Invoice < ActiveRecord::Base
   monetize :taxed_105_cents
   monetize :not_taxed_cents
   monetize :exempt_cents
+  monetize :perception_cents
 
   def operator_namespace
     operator.class.to_s.pluralize.downcase
