@@ -13,6 +13,7 @@
       <th>IVA 10,5%</th>
       <th>No gravado</th>
       <th>Exento</th>
+      <th>Percepcion AFIP</th>
       <th>Total</th>
       <th colspan="3"></th>
     </tr>
@@ -33,6 +34,7 @@
         <td><%= number_to_currency invoice.tax_105, unit: '' %></td>
         <td><%= invoice.not_taxed %></td>
         <td><%= invoice.exempt %></td>
+        <td><%= invoice.perception %></td>
         <td><%= number_to_currency invoice.total, unit: '' %></td>
         <td><%= link_to 'Detalles', [invoice.operator_namespace, invoice] %></td>
         <td><%= link_to 'Editar',
