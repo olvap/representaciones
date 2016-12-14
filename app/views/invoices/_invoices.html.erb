@@ -1,21 +1,17 @@
-<table class='table'>
+<table class='table table-striped'>
   <thead>
     <tr>
       <th>Fecha</th>
       <th>Operador</th>
-      <th>CUIT</th>
       <th>Factura</th>
-      <th>Pto_d_Vta</th>
-      <th>Nro</th>
       <th>Gravado 21%</th>
       <th>IVA 21%</th>
       <th>Gravado 10,5%</th>
       <th>IVA 10,5%</th>
       <th>No gravado</th>
       <th>Exento</th>
-      <th>Percepcion AFIP</th>
+      <th>5% AFIP</th>
       <th>Total</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
@@ -23,24 +19,16 @@
     <% @invoices.each do |invoice| %>
       <tr>
         <td><%= localize invoice.date, :format => '%d/%m/%Y' %></td>
-        <td><%= invoice.operator.name %></td>
-        <td><%= invoice.operator.cuit %></td>
-        <td><%= invoice.invoice_type %></td>
-        <td><%= invoice.sales_point %></td>
-        <td><%= invoice.number %></td>
-        <td><%= invoice.taxed_21 %></td>
-        <td><%= number_to_currency invoice.tax_21, unit: '' %></td>
-        <td><%= invoice.taxed_105 %></td>
-        <td><%= number_to_currency invoice.tax_105, unit: '' %></td>
-        <td><%= invoice.not_taxed %></td>
-        <td><%= invoice.exempt %></td>
-        <td><%= invoice.perception %></td>
-        <td><%= number_to_currency invoice.total, unit: '' %></td>
-        <td><%= link_to 'Detalles', [invoice.operator_namespace, invoice] %></td>
-        <td><%= link_to 'Editar',
-          [:edit, invoice.operator_namespace, invoice] %></td>
-        <td><%= link_to 'Borrar', [invoice.operator_namespace, invoice],
-          method: :delete, data: { confirm: '¿Seguro de borrar?' } %></td>
+        <td><%= invoice.operator.name.truncate 30 %></td>
+        <td><%= link_to invoice.full_number, invoice_path(invoice)%></td>
+        <td class="text-right"><%= invoice.taxed_21 %></td>
+        <td class="text-right"><%= number_to_currency invoice.tax_21, unit: '' %></td>
+        <td class="text-right"><%= invoice.taxed_105 %></td>
+        <td class="text-right"><%= number_to_currency invoice.tax_105, unit: '' %></td>
+        <td class="text-right"><%= invoice.not_taxed %></td>
+        <td class="text-right"><%= invoice.exempt %></td>
+        <td class="text-right"><%= invoice.perception %></td>
+        <td class="text-right"><%= number_to_currency invoice.total %></td>
       </tr>
     <% end %>
   </tbody>
