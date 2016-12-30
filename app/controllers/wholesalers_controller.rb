@@ -14,7 +14,7 @@ class WholesalersController < ApplicationController
 
     respond_to do |format|
       if @operator.save
-        format.html { redirect_to @operator, notice: 'Mayorista creado.' }
+        format.html { redirect_to wholesalers_path, notice: 'Operador creado.' }
       else
         format.html { render :new }
       end
@@ -24,7 +24,7 @@ class WholesalersController < ApplicationController
   def update
     respond_to do |format|
       if @operator.update(wholesaler_params)
-        format.html { redirect_to @operator, notice: 'Mayorista salvado.' }
+        format.html { redirect_to wholesalers_path, notice: 'Datos de operador actualizados.' }
       else
         format.html { render :edit }
       end
@@ -34,7 +34,7 @@ class WholesalersController < ApplicationController
   def destroy
     @operator.destroy
     respond_to do |format|
-      format.html { redirect_to wholesalers_url, notice: 'Mayorista borrado.' }
+      format.html { redirect_to wholesalers_url, notice: 'Operador borrado.' }
     end
   end
 
