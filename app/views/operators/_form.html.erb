@@ -2,7 +2,7 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.input :name %>
+    <%= f.input :name, label: 'Nombre' %>
   </div>
 
   <div class="form-inputs">
@@ -10,19 +10,19 @@
   </div>
 
   <div class="form-inputs">
-    <%= f.input :address %>
+    <%= f.input :address, label: 'Direccion' %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :phone %>
+    <%= f.input :phone, label: 'Telefono' %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :tax_category, collection: ['R.INSCRIPTO','MONOTRIBUTO','EXENTO'] %>
+    <%= f.input :tax_category, label: 'Categoria', collection: ['R.INSCRIPTO','MONOTRIBUTO','EXENTO'] %>
   </div>
 
   <div class="form-inputs">
-    <%= f.input :file_number %>
+    <%= f.input :file_number, label: 'Numero de legajo' %>
   </div>
 
   <div class="form-actions">
