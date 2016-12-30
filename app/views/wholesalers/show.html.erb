@@ -3,4 +3,6 @@
 
 <%= render partial: 'operators/operator' %>
 
-<%= link_to 'Editar', edit_wholesaler_path(@operator), class: 'btn btn-primary' %> |
+<%= link_to 'Editar', edit_wholesaler_path(@operator), class: 'btn btn-primary' %>
+<%= link_to 'Borrar', wholesaler_path(@operator), class: 'btn btn-danger',
+  method: :delete, data: { confirm: 'Eliminar Operador?' } %>

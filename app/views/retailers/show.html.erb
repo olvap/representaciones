@@ -3,4 +3,6 @@
 
 <%= render partial: 'operators/operator' %>
 
-<%= link_to 'Editar', edit_retailer_path(@operator), class: 'btn btn-primary' %> |
+<%= link_to 'Editar', edit_retailer_path(@operator), class: 'btn btn-primary' %>
+<%= link_to 'Borrar', retailer_path(@operator), class: 'btn btn-primary',
+  method: :delete, data: { confirm: 'Eliminar Agencia?' } %>
