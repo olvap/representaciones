@@ -7,20 +7,18 @@
       <th>Telefono</th>
       <th>Categoria</th>
       <th>Legajo</th>
-      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @operators.each do |operator| %>
       <tr>
-        <td><%= operator.name %></td>
+        <td><%= link_to operator.name, operator %></td>
         <td><%= operator.cuit %></td>
         <td><%= operator.address %></td>
         <td><%= operator.phone %></td>
         <td><%= operator.tax_category %></td>
         <td><%= operator.file_number %></td>
-        <td><%= link_to 'Detalles', operator %></td>
       </tr>
     <% end %>
   </tbody>

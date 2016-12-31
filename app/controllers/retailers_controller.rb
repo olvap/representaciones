@@ -14,7 +14,7 @@ class RetailersController < ApplicationController
 
     respond_to do |format|
       if @operator.save
-        format.html { redirect_to @operator, notice: 'Minorista creado.' }
+        format.html { redirect_to retailers_path, notice: 'Agencia creada.' }
       else
         format.html { render :new }
       end
@@ -24,7 +24,7 @@ class RetailersController < ApplicationController
   def update
     respond_to do |format|
       if @operator.update(retailer_params)
-        format.html { redirect_to @operator, notice: 'Minorista salvado.' }
+        format.html { redirect_to retailers_path, notice: 'Datos de agencia actualizados.' }
       else
         format.html { render :edit }
       end
@@ -34,7 +34,7 @@ class RetailersController < ApplicationController
   def destroy
     @operator.destroy
     respond_to do |format|
-      format.html { redirect_to retailers_url, notice: 'Minorista borrado.' }
+      format.html { redirect_to retailers_url, notice: 'Agencia borrada.' }
     end
   end
 
